@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{pstricks}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{url}
+
+\usepackage[lmargin=1.7cm, rmargin=1.7cm, tmargin=2cm, bmargin=1.1cm]{geometry}
+
+
+%info for unused \maketitle
+\title{CV}
+\author{Sam Hall}
+\date{December 2014}
+\headsep=0.2cm
+
+\renewcommand{\labelitemi}{$\circ$}
+\newenvironment{bullets}
+{\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{0pt}}
+{\end{itemize}}
+
+
+% Change section headers
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}
+                                   {-0.1cm \@plus -1ex \@minus -.2ex}
+                                   {0.05cm \@plus.2ex}
+                                   {\centering\normalsize\scshape}}
+\makeatother
+
+\newcommand{\wa}{.12}	%
+\newcommand{\wb}{.83}	% TOTAL .95
+
+% Create Header
+\pagestyle{fancy}
+\fancyhead{}
+%\fancyhead[RO,RE]{}
+%\fancyhead[LO,LE]{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{.mm}
+
+% Figure and Table in columns...
+\makeatletter
+\newenvironment{figurehere}
+	{\def\@captype{figure}}
+	{}
+\newenvironment{tablehere}
+	{\def\@captype{table}}
+	{}
+\makeatother
+
+\begin{document}
+\input{cv}
+\end{document}
