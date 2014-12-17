@@ -1,0 +1,231 @@
+\documentclass[11pt,a4paper]{article} 
+\usepackage{url,graphicx,tabularx,array,multicol, parskip, fancybox, fancyhdr, pstricks, amssymb, amsmath, setspace, longtable}
+\usepackage[lmargin=1.7cm, rmargin=1.7cm, tmargin=2cm, bmargin=1.1cm]{geometry} 
+
+%info for unused \maketitle
+\title{CV}
+\author{Sam Hall}
+\date{November 2010}
+\headsep=0.2cm
+
+\renewcommand{\labelitemi}{$\circ$}
+\newenvironment{bullets}
+{\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{0pt}}
+{\end{itemize}}
+
+
+% Change section headers
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}
+                                   {-0.1cm \@plus -1ex \@minus -.2ex}
+                                   {0.05cm \@plus.2ex}
+                                   {\centering\normalsize\scshape}}
+\makeatother
+
+\newcommand{\wa}{.12}	%
+\newcommand{\wb}{.83}	% TOTAL .95
+
+
+% Create Header
+\pagestyle{fancy}
+\fancyhead{}
+%\fancyhead[RO,RE]{}
+%\fancyhead[LO,LE]{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{.mm}
+
+% Figure and Table in columns...
+\makeatletter
+\newenvironment{figurehere}
+	{\def\@captype{figure}}
+	{}
+\newenvironment{tablehere}
+	{\def\@captype{table}}
+	{}
+\makeatother
+
+\begin{document}
+\begin{center}
+	\sc\LARGE Samuel C$.$ P$.$ Hall\\
+	\large Curriculum Vitae
+	\vspace{0.4cm}\hrule
+\end{center}
+%\vspace{0.2cm}
+
+\begin{center}
+	\sc 54a High Street, Haslingfield, Cambridge, Cambridgeshire, CB23 1JP\\
+	\sc Telephone: 01223 871661\;\;  Mobile: 07846 371753\;\;  Email: \rm samcphall@gmail.com
+	
+	\sc Date of Birth: May 14, 1988
+\end{center}
+
+
+\vspace{0.2cm}\hrule\vspace{0.2cm}
+%\sc Profile \rm
+
+\begin{tablehere}
+\begin{tabular}{p{\wa\textwidth} p{\wb\textwidth}}
+	\sc Profile	&	
+	I am on track for excellent results in my MPhys in theoretical physics from Durham University, and have worked in industry for a leading technology consultancy.  The latter experience has shown me the importance of physics in industry and given me the opportunity to work collaboratively, both as part of a team and as an individual.  I believe that my success in academia is because I am hard working and diligent.  I have very high standards and am motivated by my interest in the subject, which makes study all the more enjoyable.  My natural aptitude for organisation and leadership has been improved captaining two college teams.  I am a high academic achiever and am engaged in a range of extracurricular activities.
+	
+	
+	%As well as being on track for excellent results in my MPhys in theoretical physics from Durham University, I have experience working in industry for a leading technology consultancy.  This experience has given me an insight into the importance of physics in industry and it has given me the opportunity to work collaboratively, both as part of a team and as an individual.  I believe that my success in academia is because I am a hard and diligent worker with very high standards and am motivated by my interest in the subject, which makes study all the more enjoyable.  On top of this, I have gained aptitude in organisational and leadership skills, whilst captaining two college teams.  To conclude, I am a high academic achiever and engage in a range of extracurricular activities.
+	
+	%am a rounded individual performing very well in academia and am involved in a range of extracurricular activities.
+\end{tabular}
+\end{tablehere}
+
+
+\vspace{0.2cm}\hrule\vspace{0.2cm}
+\sc Education \rm
+
+
+\begin{tablehere}
+\begin{tabular}{p{\wa\textwidth} p{2cm} l}
+\sc2007 -		&	\multicolumn{2}{p{\wb\textwidth}}{ \sc MPhys$.$ Theoretical Physics, Durham University, St$.$ Aidan's College.}\\
+\sc Present	&	\multicolumn{2}{p{\wb\textwidth}}{{\sc First Class Expected 2011.}  Results: Level 1: 82\%, Level 2: 72.5\%, Level 3: 79\%.
+				\begin{list}{\labelitemi}{\leftmargin=1em}
+				\item Level 4 Modules: Particle Theory, Advanced Theoretical Physics, and Atomic \& Optical physics. 
+				\item Final year project is entitled ``Baryon Number Violation at the LHC''.
+				\item Mathematics workshop module taken in third year.
+				\item Other modules studied include: Nuclear Physics, Theoretical Physics (which encompassed electromagnetism, quantum mechanics  and special relativity), Condensed Matter Physics and Statistical Physics.
+				\item Level 3: Computing project modelled symmetric and antisymmetric states of the Helium atom.  Poster project and presentation was an investigation in Quantum Dots and their use in Lasers.
+				\end{list} }\\
+								
+
+\sc2004 - 2006	&	\multicolumn{2}{p{\wb\textwidth}}{\sc Hills Road Sixth Form College, Cambridge, UK.}	\\
+			&	\sc A-Levels: 	&\rm Maths (A), Further Maths (A), Physics (A), Chemistry (A)			\\
+			&	\sc AS-Level:	&\rm History (A)											\\
+\sc1999 - 2004	&	\multicolumn{2}{p{\wb\textwidth}}{\sc Comberton Village College, Cambridge, UK.}		\\
+			&	\sc AS-Level:	& \rm Economics (A)											\\
+			&	\sc GCSE:		& 6A* 2A 1B												\\
+			&	\sc GNVQ:	& ICT (Distinction)											\\\\
+\end{tabular}
+\end{tablehere}
+
+
+\hrule\vspace{0.2cm}
+\sc Work Experience \rm
+
+\begin{tablehere}
+\begin{tabular}{p{\wa\textwidth} p{\wb\textwidth}}
+\sc 2006 - 2010	&	\sc Technology Scholar, Cambridge Consultants Ltd. (CCL).\\
+				&	Worked in the Medical Electronics Group (previously named Wireless ASICs - Application Specific IC) often on projects with a large groups of engineers.
+					\begin{list}{\labelitemi}{\leftmargin=1em}
+					\item Frequently worked on the development of novel optical sensors.
+					\item Had experience with programming including interfacing with devices and programming PICs (Programmable ICs).
+					\item Practical experience with experiments and analysis, including prototyping circuits. 
+					\item Work on an individual client project, investigating novel implementations of extracting a pulse from the diffusion pattern of light through the skin (photoplethysmography).  MatLab and LabVIEW scripts were written to interface with existing electronics.
+					\end{list}
+\end{tabular}
+\end{tablehere}
+			
+\begin{tablehere}
+\begin{tabular}{p{\wa\textwidth} p{\wb\textwidth}}
+\sc 2004 - 2006	&	{\sc Caf\'e Staff, Waitrose, Cambridge.}
+					\begin{list}{\labelitemi}{\leftmargin=1em}
+					\item Worked under pressure to comply with demanding health and safety regulations.
+					\item Responsible for handling caf\'e's takings, which was often over \pounds2,000 a day.  Also worked methodically preparing food, cleaning, and serving customers.
+					\end{list}
+\end{tabular}
+\end{tablehere}
+
+
+
+\hrule\vspace{0.2cm}
+\sc Additional Skills \rm
+
+\begin{tablehere}
+\begin{tabular}{p{\wa\textwidth} p{\wb\textwidth}}
+	\sc Computing	&	Word, Excel, PowerPoint, Visio, LaTeX, Python, C/C++, MatLab and LabVIEW.\\% some Machine Code experience.	\\
+	\sc Other		&	Theoretical Physics demands a high level of mathematics and problem solving skills.	\\
+				&	Soldering.																\\\\
+\end{tabular}
+\end{tablehere}
+
+
+\hrule\vspace{0.2cm}
+\sc Achievements and Interests\rm
+\fancyhead[RO,RE]{\sc Samuel C. P. Hall}
+\fancyhead[LO,LE]{\sc Curriculum Vitae}
+%\renewcommand{\headrulewidth}{.4pt}
+
+\begin{tablehere}
+\begin{tabular}{p{\wa\textwidth} p{\wb\textwidth}}
+	\sc Gap Year	&	Travelled around the world with two friends after working at CCL.
+					\begin{list}	{\labelitemi}{\leftmargin=1em}			
+					\item Spent three months backpacking through South-East Asia and South America.
+					\item Met a variety of interesting people; both locals and travellers.
+					\end{list}\\	
+	\sc Sports		&	{\sc Squash}
+					\begin{list}{\labelitemi}{\leftmargin=1em}
+					\item Captain of St$.$ Aidan's College squash team, leadership and organisational skills are essential. 
+					\item England Squash Level 1 registered coach: used the qualification to teach teenagers.
+					\item Won the under 16's tournament and most improved player award at my local squash club in the same year.
+					\end{list}\\
+				&	{\sc Ultimate Frisbee}
+					\begin{list}{\labelitemi}{\leftmargin=1em}
+					\item Ultimate Frisbee Captain for St$.$ Aidan's College in my second year.
+					\item During my captaincy the team improved dramatically and won the College Cup.
+					\end{list}\\
+	\sc Other		&	Interests include:
+					\begin{list}{\labelitemi}{\leftmargin=1em}
+					\item Photography.  Particularly macro photography and landscapes.
+					\item Hiking.  Memorable walks include the Inca trail in Peru, the Yorkshire three-peaks, and walking holidays in France, Switzerland, Wales and Cumbria.
+					\item RYA qualifications in sailing and windsurfing and began kitesurfing this summer.
+					\item Skiing is a passion and I have been numerous times to the French Alps.
+					\item Organised independent trips with friends: this summer travelled down the east coast of the USA.
+					\end{list}\\
+\end{tabular}
+\end{tablehere}
+
+
+\hrule\vspace{0.2cm}
+\sc Referees \rm
+
+\sc\footnotesize
+%\scriptsize
+
+\begin{tablehere}
+\begin{tabular}{p{\wa\textwidth} p{.35\textwidth} p{.06\textwidth} p{.41\textwidth}}
+	\multicolumn{4}{p{\wb\textwidth}}{\normalsize Prof$.$ Peter Richardson: \; Level 4 Project Supervisor.}				\\
+		& 	University of Durham,			&	Tel:		&		0191 3343811							\\
+		&	Science Laboratories,			&	Email:	&\rm		peter.richardson@durham.ac.uk			\\
+		&	South Road, Durham, DH1 3LE	&			&											\\\\
+	\multicolumn{4}{p{\wb\textwidth}}{\normalsize Dr$.$ Matthew Hayes: \; Group Leader, Cambridge Consultants Ltd.}	\\
+		& 	Cambridge Consultants Ltd.,		&	Tel:		&		01223 420024							\\
+		&	Science Park, Milton Road,		&	Email:	&\rm		matthew.hayes@cambridgeconsultants.com	\\
+		&	Cambridge, CB4 0DW			&			&											\\\\
+	\multicolumn{4}{p{\wb\textwidth}}{\normalsize Prof$.$ Chris Done: \; Level 3 Computing Project Supervisor}			\\
+		& 	University of Durham,			&	Tel:		&		0191 3343614							\\
+		&	Science Laboratories,			&	Email:	&\rm		chris.done@durham.ac.uk				\\
+		&	South Road, Durham, DH1 3LE	&			&											\\\\
+\end{tabular}
+\end{tablehere}
+\hrule
+
+
+\end{document}
+
+
+
+
+% Waitrose Cambridge, branch 651: 20/07/2004 - 08/04/2006
+
+
+
+
+%		\sc Photography	&	Keen amateur photographer, particularly interested in macro photography, animals and landscapes.  \\\\
+%		\sc Walking		&	Enjoy hiking and have completed the Inca trail in Peru, and the Yorkshire three-peaks twice in under 10 hours.  Also been hammocking around a French national park for five days.\\
+
+%							&	\multicolumn{2}{p{\wb\textwidth}}{  At level 4 modules studied are Particle Theory, Theoretical Physics and Atomic \& Optical Physics.  Final year project is entitled \emph{Baryon Number Violation at the LHC}.  At level 3 theoretical physics allowed me to study a mathematics module.	At level 3 Mathematics laboratory work was replaced by a Mathematics module, Quantum Mechanics, Special Relativity, Electromagnetism, Statistical, Condensed Matter and Nuclear Physics. }\\
+%					& \multicolumn{2}{p{\wb\textwidth}}{{\sc First Class Expected 2011.}  Results: Level 1: 82\%, Level 2: 72.5\%, Level 3: 79\%.} \\\\
+
+%	\item Photography.  Particularly macro photography and landscapes.
+%	\item Hiking.  Walked the Inca trail in Peru and the Yorkshire three-peaks, as well as several walking holidays.
+%	\item 
+%	\item Water sports: sailing, windsurfing and recently kitesurfing.
+%	\item Been instrumental in organising a number of holidays around Europe and North America.
