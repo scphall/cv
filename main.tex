@@ -1,64 +1,104 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{array}
-\usepackage{fancybox}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage{longtable}
-\usepackage{multicol}
-\usepackage{parskip}
-\usepackage{pstricks}
-\usepackage{setspace}
-\usepackage{tabularx}
-\usepackage{url}
+\documentclass[11pt,a4paper,roman]{style/moderncv}   % ('sans', 'roman', and 'final')
+% 'casual' (default), 'classic', 'oldstyle' and 'banking'
+% 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+%\usepackage{hyperref}
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+% adjust the page margins
+\usepackage[scale=0.85]{geometry}
+\usepackage{bm}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
-\usepackage[lmargin=1.7cm, rmargin=1.7cm, tmargin=2cm, bmargin=1.1cm]{geometry}
+% personal data
+\name{Samuel}{Hall}
+\title{Curriculum Vitae}
+\address{29 Palace Mansions}{Earsby Street, London, W14 8QW}{United Kingdom}
+\phone[fixed]{+44~(0)~75115~99016}
+\email{samcphall@gmail.com}
+\extrainfo{Nationality : British}
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+                                % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+%\documentclass[11pt,a4paper]{article}
+%\usepackage{amsmath}
+%\usepackage{palatino}
+%\usepackage{amssymb}
+%\usepackage{array}
+%\usepackage{fancybox}
+%\usepackage{fancyhdr}
+%\usepackage{graphicx}
+%\usepackage{longtable}
+%\usepackage{multicol}
+%\usepackage{parskip}
+%\usepackage{pstricks}
+%\usepackage{setspace}
+%\usepackage{tabularx}
+%\usepackage{url}
+%
+%\usepackage[lmargin=1.7cm, rmargin=1.7cm, tmargin=2cm, bmargin=1.1cm]{geometry}
 
 
 %info for unused \maketitle
-\title{CV}
-\author{Sam Hall}
-\date{December 2014}
-\headsep=0.2cm
-
-\renewcommand{\labelitemi}{$\circ$}
-\newenvironment{bullets}
-{\begin{itemize}
-	\setlength{\itemsep}{0pt}
-	\setlength{\parskip}{0pt}
-	\setlength{\parsep}{0pt}}
-{\end{itemize}}
-
-
-% Change section headers
-\makeatletter
-\renewcommand\section{\@startsection {section}{1}{\z@}
-                                   {-0.1cm \@plus -1ex \@minus -.2ex}
-                                   {0.05cm \@plus.2ex}
-                                   {\centering\normalsize\scshape}}
-\makeatother
-
-\newcommand{\wa}{.12}	%
-\newcommand{\wb}{.83}	% TOTAL .95
-
-% Create Header
-\pagestyle{fancy}
-\fancyhead{}
-%\fancyhead[RO,RE]{}
-%\fancyhead[LO,LE]{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{.mm}
-
-% Figure and Table in columns...
-\makeatletter
-\newenvironment{figurehere}
-	{\def\@captype{figure}}
-	{}
-\newenvironment{tablehere}
-	{\def\@captype{table}}
-	{}
-\makeatother
+%\title{CV}
+%\author{Sam Hall}
+%\date{December 2014}
+%\headsep=0.2cm
+%
+%\renewcommand{\labelitemi}{$\circ$}
+%\newenvironment{bullets}
+%{\begin{itemize}
+	%\setlength{\itemsep}{0pt}
+	%\setlength{\parskip}{0pt}
+	%\setlength{\parsep}{0pt}}
+%{\end{itemize}}
+%
+%
+%% Change section headers
+%\makeatletter
+%\renewcommand\section{\@startsection {section}{1}{\z@}
+                                   %{-0.1cm \@plus -1ex \@minus -.2ex}
+                                   %{0.05cm \@plus.2ex}
+                                   %{\centering\normalsize\scshape}}
+%\makeatother
+%
+%\newcommand{\wa}{.12}	%
+%\newcommand{\wb}{.83}	% TOTAL .95
+%
+%% Create Header
+%\pagestyle{fancy}
+%\fancyhead{}
+%%\fancyhead[RO,RE]{}
+%%\fancyhead[LO,LE]{}
+%\fancyfoot{}
+%\renewcommand{\headrulewidth}{.mm}
+%
+%% Figure and Table in columns...
+%\makeatletter
+%\newenvironment{figurehere}
+	%{\def\@captype{figure}}
+	%{}
+%\newenvironment{tablehere}
+	%{\def\@captype{table}}
+	%{}
+%\makeatother
 
 \begin{document}
 \input{cv}
