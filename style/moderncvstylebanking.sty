@@ -40,6 +40,7 @@
 % symbols
 \moderncvicons{awesome}
 
+\usepackage{mpoint}
 % commands
 \newcommand*{\maketitlesymbol}{%
     {~~~{\rmfamily\textbullet}~~~}}% the \rmfamily is required to force Latin Modern fonts when using sans serif, as OMS/lmss/m/n is not defined and gets substituted by OMS/cmsy/m/n
@@ -91,6 +92,7 @@
       \addtomaketitle{\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}}%
     \ifthenelse{\isundefined{\@email}}{}{\addtomaketitle{\emailsymbol\emaillink{\@email}}}%
     \ifthenelse{\isundefined{\@homepage}}{}{\addtomaketitle{\homepagesymbol\httplink{\@homepage}}}%
+    %\ifthenelse{\isundefined{\@homepage}}{}{\addtomaketitle{\mpoint\httplink{\@homepage}}}%
     \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
       \addtomaketitle{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
     \ifthenelse{\isundefined{\@extrainfo}}{}{\addtomaketitle{\@extrainfo}}%
@@ -206,6 +208,14 @@
     \else{\\\vbox{\small#7}}\fi%
   \par\addvspace{#1}}
 
+\renewcommand*{\cventryrm}[7][.25em]{
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}%
+	  {\bfseries #5} & {\bfseries #4} \\%
+	  {\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\itshape #2}\\%
+  \end{tabular*}%
+  \ifx&#7&%
+    \else{\\\vbox{\small#7}}\fi%
+  \par\addvspace{#1}}
 
 \renewcommand*{\smallcventry}[4][.25em]{
   \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}%

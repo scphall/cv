@@ -13,6 +13,7 @@
 \ProvidesClass{moderncv}[2013/04/29 v1.5.1 modern curriculum vitae and letter document class]
 
 
+
 %-------------------------------------------------------------------------------
 %                class options
 %
