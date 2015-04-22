@@ -1,24 +1,39 @@
-MAIN = main
-OUTPUT = cv
+LATEX = pdflatex -halt-on-error -file-line-error
 
-LATEX = pdflatex
-AUXDIR = aux
+BIBDIR = bib
+OUTDIR = aux
+PDFDIR = pdfs
+PREAMBLEDIR = preamble
+META = Thesis/metadata
+CHAPTERS = $(filter-out \
+					 $(PDFDIR)/ \
+					 $(PREAMBLEDIR)/ \
+					 $(BIBDIR)/ \
+					 $(OUTDIR)/,$(wildcard */))
 
-FIGEXT = .pdf
-MAINEXT= .pdf
+MAINS = $(wildcard *.tex)
+TARGETS = $(addsuffix .pdf,$(addprefix $(PDFDIR)/,$(subst .tex,,$(MAINS))))
+CONTENT = $(wildcard content/*.tex)
 
-GENERATED = $(OUTPUT)$(MAINEXT)
-BUILDCOMMAND = $(LATEX) --output-directory=$(AUXDIR) $(MAIN)
-BUILDCOMMAND += && mv -f $(AUXDIR)/$(MAIN)$(MAINEXT) $(GENERATED)
 
-TEXSOURCES = $(wildcard *.tex)
+all: $(TARGETS)
 
-$(GENERATED): $(TEXSOURCES) Makefile
-	$(BUILDCOMMAND)
+$(PDFDIR)/%.pdf: %.tex
+	sed 's/XXX/$*/g' content/main.tex > $(OUTDIR)/$*.tex
+	$(LATEX) --output-directory=$(OUTDIR) -draftmode $(OUTDIR)/$*
+	$(LATEX) --output-directory=$(OUTDIR) $(OUTDIR)/$*
+	cp -f $(OUTDIR)/$*.pdf $(PDFDIR)/.
+	mv -f $(OUTDIR)/$*.pdf $(PDFDIR)/recent.pdf
 
-all: $(GENERATED)
 
-.PHONY : clean
+.PHONY: info clean
+info:
+	@echo $(MAINS)
+	@echo $(TARGETS)
+	@echo $(CONTENT)
 
 clean:
-	rm -f $(AUXDIR)/* $(GENERATED)
+	rm -f $(OUTDIR)/* $(PDFDIR)/*.pdf
+
+
+
