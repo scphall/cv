@@ -3,18 +3,10 @@ LATEX = pdflatex -halt-on-error -file-line-error
 BIBDIR = bib
 OUTDIR = aux
 PDFDIR = pdfs
-PREAMBLEDIR = preamble
-META = Thesis/metadata
-CHAPTERS = $(filter-out \
-					 $(PDFDIR)/ \
-					 $(PREAMBLEDIR)/ \
-					 $(BIBDIR)/ \
-					 $(OUTDIR)/,$(wildcard */))
 
 MAINS = $(wildcard *.tex)
 TARGETS = $(addsuffix .pdf,$(addprefix $(PDFDIR)/,$(subst .tex,,$(MAINS))))
 CONTENT = $(wildcard content/*.tex)
-
 
 all: $(TARGETS)
 
@@ -23,10 +15,9 @@ $(PDFDIR)/%.pdf: %.tex
 	$(LATEX) --output-directory=$(OUTDIR) -draftmode $(OUTDIR)/$*
 	$(LATEX) --output-directory=$(OUTDIR) $(OUTDIR)/$*
 	cp -f $(OUTDIR)/$*.pdf $(PDFDIR)/.
-	mv -f $(OUTDIR)/$*.pdf $(PDFDIR)/recent.pdf
 
 
-.PHONY: info clean
+.PHONY: info clean setup
 info:
 	@echo $(MAINS)
 	@echo $(TARGETS)
@@ -35,5 +26,8 @@ info:
 clean:
 	rm -f $(OUTDIR)/* $(PDFDIR)/*.pdf
 
+setup:
+	mkdir $(PDFDIR)
+	mkdir $(OUTDIR)
 
 
