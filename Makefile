@@ -4,18 +4,33 @@ BIBDIR = bib
 OUTDIR = aux
 PDFDIR = pdfs
 
-MAINS = $(wildcard *.tex)
-TARGETS = $(addsuffix .pdf,$(addprefix $(PDFDIR)/,$(subst .tex,,$(MAINS))))
+MAINSCV = $(wildcard cv_*.tex)
+MAINSCOVER = $(wildcard cover_*.tex)
+#MAINS = $(wildcard cv_*.tex) $(wildcard cover_*.tex)
+MAINS = $(MAINSC) $(MAINSCOVER)
+TARGETSCV = $(addsuffix .pdf,$(addprefix $(PDFDIR)/,$(subst .tex,,$(MAINSCV))))
+TARGETSCOVER = $(addsuffix .pdf,$(addprefix $(PDFDIR)/,$(subst .tex,,$(MAINSCOVER))))
+#TARGETS = $(addsuffix .pdf,$(addprefix $(PDFDIR)/,$(subst .tex,,$(MAINS))))
+TARGETS = $(TARGETSCV) $(TARGETSCOVER)
 CONTENT = $(wildcard content/*.tex)
 
 all: $(TARGETS)
 
-$(PDFDIR)/%.pdf: %.tex
-	sed 's/XXX/$*/g' content/main.tex > $(OUTDIR)/$*.tex
-	$(LATEX) --output-directory=$(OUTDIR) -draftmode $(OUTDIR)/$*
-	$(LATEX) --output-directory=$(OUTDIR) $(OUTDIR)/$*
-	cp -f $(OUTDIR)/$*.pdf $(PDFDIR)/.
+cv: $(TARGETSCV)
 
+cover: $(TARGETSCOVER)
+
+$(PDFDIR)/cv_%.pdf: cv_%.tex
+	sed 's/XXX/cv_$*/g' content/cv_main.tex > $(OUTDIR)/cv_$*.tex
+	@#$(LATEX) --output-directory=$(OUTDIR) -draftmode $(OUTDIR)/cv_$*
+	$(LATEX) --output-directory=$(OUTDIR) $(OUTDIR)/cv_$*
+	cp -f $(OUTDIR)/cv_$*.pdf $(PDFDIR)/.
+
+$(PDFDIR)/cover_%.pdf: cover_%.tex
+	sed 's/XXX/cover_$*/g' content/cover_main.tex > $(OUTDIR)/cover_$*.tex
+	@#$(LATEX) --output-directory=$(OUTDIR) -draftmode $(OUTDIR)/cover_$*
+	$(LATEX) --output-directory=$(OUTDIR) $(OUTDIR)/cover_$*
+	cp -f $(OUTDIR)/cover_$*.pdf $(PDFDIR)/.
 
 .PHONY: info clean setup
 info:
