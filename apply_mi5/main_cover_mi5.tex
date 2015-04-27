@@ -1,0 +1,63 @@
+%\documentclass[12pt,a4paper,roman]{style/moderncv}
+\documentclass[12pt,a4paper,roman]{moderncv}
+\usepackage{footmisc}
+
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[utf8]{inputenc}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\usepackage[scale=0.87,left=3.0cm,right=3.0cm]{geometry}
+%\usepackage[scale=0.87,left=3.0cm,right=3.0cm,bottom=3cm]{geometry}
+\usepackage{bm}
+\usepackage{pifont}
+\usepackage{parskip}
+
+\definecolor{color1}{rgb}{0.18,0.30,0.55}% light darkblue
+\definecolor{color2}{rgb}{0.50,0.50,0.50}% light darkblue
+
+\newcommand{\publication}[4]{\cventry{#1}{#3}{\textit{#2}}{#4}{}{}}
+\renewcommand*{\homepagesymbol}      {\marvosymbol{109}~}
+\renewcommand*{\homepagesymbol}      {\marvosymbol{64}~}
+%\renewcommand*{\fixedphonesymbol}    {\PhoneHandset~}
+\renewcommand*{\fixedphonesymbol}    {{\large\ding{38}~}}
+
+
+% personal data
+\name{Samuel C.\,P.}{Hall}
+%\title{Curriculum Vitae}
+\address{29 Palace Mansions}{Earsby Street}{London -- W14 8QW}
+\phone[fixed]{+44~(0)~75115~99016}
+\email{samcphall@gmail.com}
+%\extrainfo{Nationality : British}
+%\homepage{www.github.com/scphall}
+
+
+\makeatletter
+\def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
+\makeatother
+\renewcommand*\footnoterule{}
+
+\def\cpp{\mbox{\textsc{C\raisebox{0.1em}{{\footnotesize{++}}}}}}
+
+%\newenvironment{cminipage}{
+%\begin{center}
+  %\begin{minipage}{0.8\textwidth}
+  %}{
+  %\end{minipage}
+%\end{center}
+%}
+
+
+
+\begin{document}
+\makecvtitle
+\setlength{\parskip}{0.8em}% restore the value
+
+\input{apply_mi5/cover}
+
+%\vfill
+
+%\vspace{4cm}
+
+%{\footnotesize Encl.~CV}
+\end{document}

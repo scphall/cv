@@ -4,42 +4,36 @@ BIBDIR = bib
 OUTDIR = aux
 PDFDIR = pdfs
 
-MAINSCV = $(wildcard cv_*.tex)
-MAINSCOVER = $(wildcard cover_*.tex)
-#MAINS = $(wildcard cv_*.tex) $(wildcard cover_*.tex)
-MAINS = $(MAINSC) $(MAINSCOVER)
-TARGETSCV = $(addsuffix .pdf,$(addprefix $(PDFDIR)/,$(subst .tex,,$(MAINSCV))))
-TARGETSCOVER = $(addsuffix .pdf,$(addprefix $(PDFDIR)/,$(subst .tex,,$(MAINSCOVER))))
-#TARGETS = $(addsuffix .pdf,$(addprefix $(PDFDIR)/,$(subst .tex,,$(MAINS))))
+MAINSCV      = $(wildcard apply_*/cv.tex)
+MAINSCOVER   = $(wildcard apply_*/cover.tex)
+TARGETSCV    =  $(subst cv,scph_cv,$(subst .tex,.pdf,$(MAINSCV)))
+TARGETSCOVER =  $(subst cover,scph_cover,$(subst .tex,.pdf,$(MAINSCOVER)))
+MAINS   = $(MAINSCV) $(MAINSCOVER)
 TARGETS = $(TARGETSCV) $(TARGETSCOVER)
 CONTENT = $(wildcard content/*.tex)
 
 all: $(TARGETS)
 
-cv: $(TARGETSCV)
+apply_%/scph_cover.pdf: apply_%/cover.tex
+	sed 's/XXX/$*/g' content/main_cover.tex > apply_$*/main_cover_$*.tex
+	$(LATEX) --output-directory=$(OUTDIR) apply_$*/main_cover_$*
+	cp -f $(OUTDIR)/main_cover_$*.pdf apply_$*/scph_cover.pdf
 
-cover: $(TARGETSCOVER)
-
-$(PDFDIR)/cv_%.pdf: cv_%.tex
-	sed 's/XXX/cv_$*/g' content/cv_main.tex > $(OUTDIR)/cv_$*.tex
-	@#$(LATEX) --output-directory=$(OUTDIR) -draftmode $(OUTDIR)/cv_$*
-	$(LATEX) --output-directory=$(OUTDIR) $(OUTDIR)/cv_$*
-	cp -f $(OUTDIR)/cv_$*.pdf $(PDFDIR)/.
-
-$(PDFDIR)/cover_%.pdf: cover_%.tex
-	sed 's/XXX/cover_$*/g' content/cover_main.tex > $(OUTDIR)/cover_$*.tex
-	@#$(LATEX) --output-directory=$(OUTDIR) -draftmode $(OUTDIR)/cover_$*
-	$(LATEX) --output-directory=$(OUTDIR) $(OUTDIR)/cover_$*
-	cp -f $(OUTDIR)/cover_$*.pdf $(PDFDIR)/.
+apply_%/scph_cv.pdf: apply_%/cv.tex
+	sed 's/XXX/$*/g' content/main_cv.tex > apply_$*/main_cv_$*.tex
+	$(LATEX) --output-directory=$(OUTDIR) apply_$*/main_cv_$*
+	cp -f $(OUTDIR)/main_cv_$*.pdf apply_$*/scph_cv.pdf
 
 .PHONY: info clean setup
 info:
 	@echo $(MAINS)
 	@echo $(TARGETS)
-	@echo $(CONTENT)
 
 clean:
-	rm -f $(OUTDIR)/* $(PDFDIR)/*.pdf
+	rm -f $(OUTDIR)/* apply*/main*.tex
+
+veryclean:
+	rm -f $(OUTDIR)/* apply*/scph_cv.pdf apply*/scph_cover.pdf apply*/main*.tex
 
 setup:
 	mkdir $(PDFDIR)
