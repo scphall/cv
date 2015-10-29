@@ -6,3 +6,6 @@ PDFDIR = pdfs
 all:
 	$(LATEX) --output-directory=$(OUTDIR) main_cv
 	mv $(OUTDIR)/main_cv.pdf cv.pdf
+
+clean:
+	rm -f $(OUTDIR)/*
