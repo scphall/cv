@@ -30,9 +30,6 @@ info:
 	@echo $(TARGETS)
 
 clean:
-	rm -f $(OUTDIR)/* apply*/main*.tex
-
-veryclean:
 	rm -f $(OUTDIR)/* apply*/scph_cv.pdf apply*/scph_cover.pdf apply*/main*.tex
 
 setup:
