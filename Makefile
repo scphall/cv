@@ -4,8 +4,8 @@ BIBDIR = bib
 OUTDIR = aux
 PDFDIR = pdfs
 
-MAINSCV      = $(wildcard apply_*/cv.tex)
-MAINSCOVER   = $(wildcard apply_*/cover.tex)
+MAINSCV      = $(wildcard apply*/cv.tex)
+MAINSCOVER   = $(wildcard apply*/cover.tex)
 TARGETSCV    =  $(subst cv,scph_cv,$(subst .tex,.pdf,$(MAINSCV)))
 TARGETSCOVER =  $(subst cover,scph_cover,$(subst .tex,.pdf,$(MAINSCOVER)))
 MAINS   = $(MAINSCV) $(MAINSCOVER)
