@@ -1,7 +1,7 @@
 %\documentclass[12pt,a4paper,roman]{style/moderncv}
 %\documentclass[12pt,a4paper,roman]{moderncv}
 %\usepackage[utf8]{inputenc}
-\documentclass[11pt,a4paper]{moderncv}
+\documentclass[10pt,a4paper]{moderncv}
 \usepackage[utf8]{inputenc}
 %\moderncvstyle{casual}
 \moderncvcolor{blue}
@@ -23,7 +23,8 @@
 \newcommand*{\newentry}[3][.25em]{%
   \begin{flushleft}
   \begin{tabular}[t]{@{}p{0.105\textwidth}@{\hspace{\separatorcolumnwidth}}}%
-    \raggedleft\hintstyle{#2}%
+    %\raggedleft\hintstyle{#2}%
+    \textbf{#2}
   \end{tabular}%
   \begin{tabular}[t]{@{}p{\dimexpr0.895\textwidth-\separatorcolumnwidth}@{}}
     #3
@@ -44,8 +45,8 @@
 
 
 % personal data
-\name{Samuel C.\,P.}{Hall}
-\title{Curriculum Vitae}
+\name{Samuel C.\,P.}{Hall PhD}
+%\title{Curriculum Vitae}
 \address{20 Brinkworth Way}{London}{E9 5LE}
 \phone[fixed]{+44~(0)~75115~99016}
 \email{scphall@gmail.com}
@@ -55,4 +56,8 @@
 \begin{document}
 \setlength{\parskip}{0.8em}% restore the value
 \input{cv}
+\vfill
+\begin{center}
+  References available on request
+\end{center}
 \end{document}
